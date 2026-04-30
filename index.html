@@ -1797,7 +1797,7 @@
     </div>
 
     <div class="pricing">
-      <div class="price">
+      <div class="price" data-tier="Basic Scan">
         <h3>Basic Scan</h3>
         <div class="amount">$49 <small>/ report</small></div>
         <p class="desc">A quick verification when you just need a sanity check before talking to a supplier.</p>
@@ -1810,7 +1810,7 @@
         <a href="#contact" class="btn btn-ghost">Get a quote</a>
       </div>
 
-      <div class="price featured">
+      <div class="price featured" data-tier="Standard Report">
         <h3>Standard Report</h3>
         <div class="amount">$149 <small>/ report</small></div>
         <p class="desc">The full picture before placing a serious order or signing a longer-term agreement.</p>
@@ -1824,7 +1824,7 @@
         <a href="#contact" class="btn btn-primary">Get a quote</a>
       </div>
 
-      <div class="price">
+      <div class="price" data-tier="Express 24h">
         <h3>Express 24h</h3>
         <div class="amount">+50% <small>/ on top</small></div>
         <p class="desc">Need it tomorrow? Add express turnaround to any tier and get the report within 24 hours.</p>
@@ -1995,6 +1995,8 @@
         <p class="form-note">
           By sending this form you agree to be contacted by email about your enquiry.
         </p>
+        <!-- 产品档次隐藏字段 -->
+        <input type="hidden" name="product_tier" id="productTier" value="" />
       </form>
     </div>
   </div>
@@ -2123,7 +2125,41 @@
       if (!isOpen) item.classList.add('open');
     });
   });
+  // ========== 记录用户选择的产品档次 ==========
+const productTierInput = document.getElementById('productTier');
 
+// 为所有定价卡片的按钮添加点击事件
+document.querySelectorAll('.price .btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+        const priceCard = e.target.closest('.price');
+        if (priceCard) {
+            const tier = priceCard.getAttribute('data-tier');
+            if (tier) {
+                sessionStorage.setItem('selectedTier', tier);
+            }
+        }
+    });
+});
+
+// 页面加载时，如果有存储的档次，写入隐藏字段
+if (productTierInput) {
+    const savedTier = sessionStorage.getItem('selectedTier');
+    if (savedTier) {
+        productTierInput.value = savedTier;
+    }
+}
+
+// 表单提交时，确保档次被包含
+const contactForm = document.getElementById('contactForm');
+if (contactForm) {
+    contactForm.addEventListener('submit', () => {
+        const savedTier = sessionStorage.getItem('selectedTier');
+        if (savedTier && productTierInput) {
+            productTierInput.value = savedTier;
+        }
+    });
+}
+// ========== 记录产品档次结束 ==========
   // Contact form validation + simulated submit
   const form = document.getElementById('contactForm');
   const success = document.getElementById('formSuccess');

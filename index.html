@@ -24,8 +24,8 @@
     --ink-muted: #64748b;
     --line: #e2e8f0;
     --line-soft: #eef1f5;
-    --brand: #1d4e89;        /* nordic deep blue */
-    --brand-2: #2c7a7b;      /* greyish teal */
+    --brand: #1d4e89;
+    --brand-2: #2c7a7b;
     --brand-soft: #e6eef7;
     --accent: #f6c244;
     --green: #2f9e6a;
@@ -56,7 +56,6 @@
     padding: 0 24px;
   }
 
-  /* ===== Header ===== */
   header.site {
     position: sticky;
     top: 0;
@@ -155,7 +154,6 @@
     cursor: pointer;
   }
 
-  /* ===== Hero ===== */
   .hero {
     padding: 80px 0 64px;
     background:
@@ -228,7 +226,6 @@
     color: var(--ink-muted);
   }
 
-  /* Hero card mock */
   .report-card {
     background: var(--bg-alt);
     border: 1px solid var(--line);
@@ -320,7 +317,6 @@
   .tag.yellow { background: #fbf3df; color: var(--yellow); }
   .tag.red { background: #f8e3e3; color: var(--red); }
 
-  /* ===== Section ===== */
   section { padding: 80px 0; }
   section.alt { background: var(--bg-alt); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
   .section-head {
@@ -343,7 +339,6 @@
     margin: 0;
   }
 
-  /* Trust strip */
   .trust-strip {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -376,7 +371,6 @@
     flex-shrink: 0;
   }
 
-  /* Cards grid */
   .cards {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -416,7 +410,6 @@
     font-size: 14.5px;
   }
 
-  /* Checks list */
   .checks {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -446,7 +439,6 @@
     font-size: 13.5px;
   }
 
-  /* Process */
   .steps {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -492,7 +484,6 @@
     font-size: 14px;
   }
 
-  /* Pricing */
   .pricing {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -583,7 +574,6 @@
     margin-top: 22px;
   }
 
-  /* Reasons */
   .reasons {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -619,7 +609,6 @@
     color: var(--ink-soft);
   }
 
-  /* Sample */
   .sample-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -667,7 +656,6 @@
   .sm-flag.yellow { background: #fbf4e0; color: var(--yellow); border-color: #f1e1b3; }
   .sm-flag.red { background: #f9e6e6; color: var(--red); border-color: #f2c8c8; }
 
-  /* FAQ */
   .faq {
     max-width: 820px;
     margin: 0 auto;
@@ -717,7 +705,6 @@
     padding: 0 22px 20px;
   }
 
-  /* Contact */
   .contact-grid {
     display: grid;
     grid-template-columns: 1fr 1.1fr;
@@ -858,7 +845,6 @@
     background: #fff7f7;
   }
 
-  /* Sample upload + admin */
   .sample-upload {
     margin-top: 18px;
     border: 1.5px dashed var(--line);
@@ -1025,7 +1011,6 @@
     color: #fff;
   }
 
-  /* Admin case list */
   .case-list {
     list-style: none;
     padding: 0;
@@ -1103,7 +1088,6 @@
     padding: 6px 10px;
   }
 
-  /* Visitor-facing public sample cards (grid) */
   .visitor-cases {
     display: none;
     grid-template-columns: repeat(2, 1fr);
@@ -1174,7 +1158,6 @@
     font-size: 13.5px;
   }
 
-  /* Admin-only UI is hidden by default; revealed when body.admin-mode */
   .sample-upload,
   .admin-panel {
     display: none !important;
@@ -1185,7 +1168,6 @@
   body.admin-mode .admin-panel {
     display: block !important;
   }
-  /* In admin mode, always show the mock for layout reference; hide visitor cases */
   body.admin-mode .visitor-cases {
     display: none !important;
   }
@@ -1193,7 +1175,6 @@
     display: flex !important;
   }
 
-  /* Floating admin-mode exit chip (bottom-right, only when in admin mode) */
   .admin-exit {
     display: none;
     position: fixed;
@@ -1223,14 +1204,12 @@
   .admin-exit:hover i { color: var(--red); }
   body.admin-mode .admin-exit { display: inline-flex; }
 
-  /* Hidden trigger element in footer */
   .admin-trigger {
     cursor: default;
     user-select: none;
     -webkit-user-select: none;
   }
 
-  /* Disclaimer */
   .disclaimer {
     background: #fbfaf3;
     border: 1px solid #f0e7c6;
@@ -1255,7 +1234,6 @@
   }
   .disclaimer p:last-child { margin-bottom: 0; }
 
-  /* CTA banner */
   .cta-banner {
     background: linear-gradient(135deg, var(--brand), #163d6a);
     color: #fff;
@@ -1288,7 +1266,6 @@
     text-decoration: none;
   }
 
-  /* Footer */
   footer.site {
     background: #0c1c30;
     color: #aab8cc;
@@ -1338,7 +1315,6 @@
     font-size: 13px;
   }
 
-  /* ===== Responsive ===== */
   @media (max-width: 960px) {
     .hero-grid { grid-template-columns: 1fr; gap: 40px; }
     .cards, .pricing, .reasons { grid-template-columns: 1fr 1fr; }
@@ -1386,7 +1362,6 @@
 </head>
 <body>
 
-<!-- Header -->
 <header class="site">
   <div class="container nav">
     <a href="#top" class="brand" aria-label="Home">
@@ -1416,7 +1391,6 @@
 
 <main id="top">
 
-<!-- Hero -->
 <section class="hero">
   <div class="container hero-grid">
     <div>
@@ -1460,7 +1434,6 @@
       </div>
     </div>
 
-    <!-- Hero card / sample report mock -->
     <div class="report-card" aria-hidden="true">
       <div class="report-head">
         <div class="title">
@@ -1512,11 +1485,9 @@
   </div>
 </section>
 
-<!-- Services / Deliverables -->
 <section id="services">
   <div class="container">
 
-    <!-- Trust strip -->
     <div class="trust-strip" style="margin-top: -110px;">
       <div class="trust-item"><i class="fa-solid fa-lock"></i> GDPR-aligned</div>
       <div class="trust-item"><i class="fa-solid fa-bolt"></i> Reply within 24h</div>
@@ -1568,7 +1539,6 @@
   </div>
 </section>
 
-<!-- Standard checks -->
 <section id="checks" class="alt">
   <div class="container">
     <div class="section-head">
@@ -1624,7 +1594,6 @@
   </div>
 </section>
 
-<!-- Process -->
 <section id="process">
   <div class="container">
     <div class="section-head">
@@ -1658,7 +1627,6 @@
   </div>
 </section>
 
-<!-- Why work with me -->
 <section id="why" class="alt">
   <div class="container">
     <div class="section-head">
@@ -1704,7 +1672,6 @@
   </div>
 </section>
 
-<!-- Sample report -->
 <section id="sample">
   <div class="container">
     <div class="sample-grid">
@@ -1729,10 +1696,7 @@
       </div>
 
       <div>
-        <!-- Visitor-facing area: grid of all PUBLIC cases (rendered by JS) -->
         <div class="visitor-cases" id="visitorCases"></div>
-
-        <!-- Default mock placeholder: shown when there is no public case -->
         <div class="sample-mock" id="sampleMock" aria-hidden="true">
           <div class="sm-bar title"></div>
           <div class="sm-bar"></div>
@@ -1745,8 +1709,6 @@
             <div class="sm-flag red"><i class="fa-solid fa-circle-xmark"></i> Risk</div>
           </div>
         </div>
-
-        <!-- Upload box (demo only — files are stored in browser localStorage) -->
         <div class="sample-upload" id="uploadBox">
           <div class="upload-row">
             <i class="upico fa-regular fa-file-pdf"></i>
@@ -1761,8 +1723,6 @@
           </div>
           <div class="upload-error" id="uploadError"></div>
         </div>
-
-        <!-- Demo "admin" panel — front-end only, no real backend -->
         <div class="admin-panel" id="adminPanel">
           <div class="ap-head">
             <h4>
@@ -1772,10 +1732,8 @@
             </h4>
             <span class="ap-tag">Demo · client-side only</span>
           </div>
-
           <div id="caseEmpty" class="ap-empty">No sample reports uploaded yet. Upload a PDF above to try the demo.</div>
           <ul class="case-list" id="caseList"></ul>
-
           <div class="ap-bottom">
             <button type="button" id="deleteAllBtn" class="danger" disabled>
               <i class="fa-solid fa-trash-can"></i> Delete all reports
@@ -1787,7 +1745,6 @@
   </div>
 </section>
 
-<!-- Pricing -->
 <section id="pricing" class="alt">
   <div class="container">
     <div class="section-head">
@@ -1842,7 +1799,6 @@
   </div>
 </section>
 
-<!-- FAQ -->
 <section id="faq">
   <div class="container">
     <div class="section-head">
@@ -1914,7 +1870,6 @@
   </div>
 </section>
 
-<!-- Contact -->
 <section id="contact" class="alt">
   <div class="container">
     <div class="contact-grid">
@@ -1974,7 +1929,7 @@
 
         <div class="field" data-required data-email>
           <label for="email">Email <span class="req">*</span></label>
-          <input type="email" id="email" name="email" placeholder="you@company.com" />
+          <input type="email" id="email" name="_replyto" placeholder="you@company.com" />
           <span class="err">Please enter a valid email address.</span>
         </div>
 
@@ -1995,14 +1950,12 @@
         <p class="form-note">
           By sending this form you agree to be contacted by email about your enquiry.
         </p>
-        <!-- 产品档次隐藏字段 -->
-        <input type="hidden" name="📦 Package" id="productTier" value="" />
+        <input type="hidden" name="Package" id="productTier" value="" />
       </form>
     </div>
   </div>
 </section>
 
-<!-- CTA banner -->
 <section style="padding: 0 0 80px;">
   <div class="container">
     <div class="cta-banner">
@@ -2017,7 +1970,6 @@
   </div>
 </section>
 
-<!-- Disclaimer -->
 <section id="disclaimer" style="padding-top: 0;">
   <div class="container">
     <div class="disclaimer">
@@ -2052,7 +2004,6 @@
 
 </main>
 
-<!-- Footer -->
 <footer class="site">
   <div class="container">
     <div class="foot-grid">
@@ -2096,17 +2047,14 @@
   </div>
 </footer>
 
-<!-- Floating button to exit admin mode (only visible when admin mode is on) -->
 <button type="button" class="admin-exit" id="adminExit">
   <i class="fa-solid fa-screwdriver-wrench"></i>
   Admin · Exit
 </button>
 
 <script>
-  // Year
   document.getElementById('year').textContent = new Date().getFullYear();
 
-  // Mobile menu
   const menuToggle = document.getElementById('menuToggle');
   const menu = document.getElementById('menu');
   menuToggle.addEventListener('click', () => {
@@ -2116,7 +2064,6 @@
     a.addEventListener('click', () => menu.classList.remove('open'));
   });
 
-  // FAQ accordion
   document.querySelectorAll('.faq-item').forEach(item => {
     const q = item.querySelector('.faq-q');
     q.addEventListener('click', () => {
@@ -2125,31 +2072,31 @@
       if (!isOpen) item.classList.add('open');
     });
   });
+
   // ========== 记录用户选择的产品档次 ==========
-const productTierInput = document.getElementById('productTier');
+  const productTierInput = document.getElementById('productTier');
 
-// 为所有定价卡片的按钮添加点击事件
-document.querySelectorAll('.price .btn').forEach(btn => {
-    btn.addEventListener('click', (e) => {
-        const priceCard = e.target.closest('.price');
-        if (priceCard) {
-            const tier = priceCard.getAttribute('data-tier');
-            if (tier) {
-                sessionStorage.setItem('selectedTier', tier);
-            }
+  document.querySelectorAll('.price .btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const priceCard = btn.closest('.price');
+      if (priceCard) {
+        const tier = priceCard.getAttribute('data-tier');
+        if (tier) {
+          sessionStorage.setItem('selectedTier', tier);
+          console.log('已保存套餐:', tier);
         }
+      }
     });
-});
+  });
 
-// 页面加载时，如果有存储的档次，写入隐藏字段
-if (productTierInput) {
+  if (productTierInput) {
     const savedTier = sessionStorage.getItem('selectedTier');
     if (savedTier) {
-        productTierInput.value = savedTier;
+      productTierInput.value = savedTier;
+      console.log('页面加载，已恢复套餐:', savedTier);
     }
-}
+  }
 
-  // Contact form validation + simulated submit
   const form = document.getElementById('contactForm');
   const success = document.getElementById('formSuccess');
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -2161,7 +2108,6 @@ if (productTierInput) {
   form.addEventListener('submit', (e) => {
     e.preventDefault();
 
-    // 复用你已有的 either/or 以及必填项校验（保持原逻辑）
     let valid = true;
 
     eitherGroup.classList.remove('invalid');
@@ -2169,125 +2115,68 @@ if (productTierInput) {
     const nameFilled = nameInput.value.trim().length > 0;
     const companyFilled = companyInput.value.trim().length > 0;
     if (!nameFilled && !companyFilled) {
-        eitherGroup.classList.add('invalid');
-        eitherHint.classList.add('invalid');
-        eitherHint.querySelector('i').className = 'fa-solid fa-circle-exclamation';
-        valid = false;
+      eitherGroup.classList.add('invalid');
+      eitherHint.classList.add('invalid');
+      eitherHint.querySelector('i').className = 'fa-solid fa-circle-exclamation';
+      valid = false;
     } else {
-        eitherHint.querySelector('i').className = 'fa-regular fa-circle-info';
+      eitherHint.querySelector('i').className = 'fa-regular fa-circle-info';
     }
 
     form.querySelectorAll('.field').forEach(field => {
-        const input = field.querySelector('input, textarea');
-        if (!input) return;
-        field.classList.remove('invalid');
-
-        if (field.hasAttribute('data-required') && !input.value.trim()) {
-            field.classList.add('invalid');
-            valid = false;
-        }
-        if (field.hasAttribute('data-email') && input.value.trim() && !emailRegex.test(input.value.trim())) {
-            field.classList.add('invalid');
-            valid = false;
-        }
+      const input = field.querySelector('input, textarea');
+      if (!input) return;
+      field.classList.remove('invalid');
+      if (field.hasAttribute('data-required') && !input.value.trim()) {
+        field.classList.add('invalid');
+        valid = false;
+      }
+      if (field.hasAttribute('data-email') && input.value.trim() && !emailRegex.test(input.value.trim())) {
+        field.classList.add('invalid');
+        valid = false;
+      }
     });
 
     if (!valid) {
-        success.classList.remove('show');
-        return;
+      success.classList.remove('show');
+      return;
     }
 
-    // ========== 新增：设置产品档次 ==========
-    const productTierInput = document.getElementById('productTier');
     const savedTier = sessionStorage.getItem('selectedTier');
     if (savedTier && productTierInput) {
-        productTierInput.value = savedTier;
-        console.log('设置产品档次:', savedTier);  // 调试用
+      productTierInput.value = savedTier;
+      console.log('提交时设置套餐:', savedTier);
     }
-    // ========== 设置产品档次结束 ==========
 
-    // ✅ 提交至 Formspree（iframe 方式：无跳转，用户无感）
     const iframe = document.createElement('iframe');
     iframe.name = 'hidden-form-submit';
     iframe.style.display = 'none';
     form.target = iframe.name;
     document.body.appendChild(iframe);
 
-    // 提交成功后清理 iframe，显示成功提示
     iframe.onload = () => {
-        setTimeout(() => {
-            document.body.removeChild(iframe);
-        }, 1000);
-        success.classList.add('show');
-        form.reset();
-        success.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        setTimeout(() => success.classList.remove('show'), 5000);
-        form.target = '';
+      setTimeout(() => {
+        document.body.removeChild(iframe);
+      }, 1000);
+      success.classList.add('show');
+      form.reset();
+      success.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      setTimeout(() => success.classList.remove('show'), 5000);
+      form.target = '';
     };
 
     form.submit();
-});
+  });
 
-    // ✅ 提交至 Formspree（iframe 方式：无跳转，用户无感）
-    const iframe = document.createElement('iframe');
-    iframe.name = 'hidden-form-submit';
-    iframe.style.display = 'none';
-    form.target = iframe.name;
-    document.body.appendChild(iframe);
-
-    // 提交成功后清理 iframe，显示成功提示
-    iframe.onload = () => {
-        setTimeout(() => {
-            document.body.removeChild(iframe);
-        }, 1000);
-        success.classList.add('show');
-        form.reset();
-        success.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        setTimeout(() => success.classList.remove('show'), 5000);
-        form.target = '';
-    };
-
-    form.submit();
-});
-
-  /* ============================================================
-     Sample report upload + demo "admin" panel
-     ------------------------------------------------------------
-     This is a FRONT-END ONLY demo. The PDF is encoded as a
-     data URL and saved in window.localStorage so it survives
-     a page refresh in the same browser.
-
-     Storage options compared:
-       - localStorage : persists across refreshes (used here),
-                        but limited to ~5 MB per origin and to
-                        the current browser/device only.
-       - In-memory JS variable : faster, no quota, but lost on
-                        refresh / tab close.
-
-     ADMIN ACCESS (front-end demo only — NOT real auth):
-       1. Click the copyright text in the footer 5 times in a row.
-       2. Enter the admin password in the prompt that appears.
-       3. On success, admin mode is enabled and remembered in
-          sessionStorage (cleared when the tab is closed).
-       4. Refreshing the page keeps admin mode on within the
-          same tab; closing the tab requires re-login.
-
-     To change the admin password, edit ADMIN_PASSWORD below.
-     In production, replace this with a real backend + proper
-     server-side authentication (sessions / JWT / OAuth).
-     ============================================================ */
-
-  // === Admin password — change this string to update the password ===
   const ADMIN_PASSWORD = 'admin2025';
   const ADMIN_SESSION_KEY = 'adminMode';
   const ADMIN_CLICK_COUNT = 5;
-  const ADMIN_CLICK_WINDOW_MS = 3000; // 5 clicks must happen within 3s
+  const ADMIN_CLICK_WINDOW_MS = 3000;
 
   (function setupAdminAccess() {
     const trigger = document.getElementById('adminTrigger');
     const exitBtn = document.getElementById('adminExit');
 
-    // Restore admin mode from sessionStorage on page load
     if (sessionStorage.getItem(ADMIN_SESSION_KEY) === 'true') {
       document.body.classList.add('admin-mode');
     }
@@ -2296,9 +2185,7 @@ if (productTierInput) {
     let firstClickAt = 0;
 
     trigger.addEventListener('click', () => {
-      // If already in admin mode, ignore
       if (document.body.classList.contains('admin-mode')) return;
-
       const now = Date.now();
       if (clicks === 0 || (now - firstClickAt) > ADMIN_CLICK_WINDOW_MS) {
         clicks = 1;
@@ -2306,20 +2193,17 @@ if (productTierInput) {
       } else {
         clicks++;
       }
-
       if (clicks >= ADMIN_CLICK_COUNT) {
         clicks = 0;
         firstClickAt = 0;
         const entered = window.prompt('Enter admin password:');
-        if (entered === null) return; // user cancelled
+        if (entered === null) return;
         if (entered === ADMIN_PASSWORD) {
           sessionStorage.setItem(ADMIN_SESSION_KEY, 'true');
           document.body.classList.add('admin-mode');
-          // Re-render the sample area so admin UI reflects current state
           if (typeof window.__renderSampleAdmin === 'function') {
             window.__renderSampleAdmin();
           }
-          // Scroll to the admin panel for convenience
           const panel = document.getElementById('adminPanel');
           if (panel) panel.scrollIntoView({ behavior: 'smooth', block: 'center' });
         } else {
@@ -2335,27 +2219,20 @@ if (productTierInput) {
   })();
 
   (function setupSampleReport() {
-    // New multi-case storage key (array of records).
     const STORAGE_KEY = 'sino_vetting_samples_v2';
-    // Legacy single-record key (auto-migrated to the new array on first load).
     const LEGACY_KEY  = 'sino_vetting_sample_report_v1';
-    const MAX_BYTES   = 5 * 1024 * 1024; // 5 MB
+    const MAX_BYTES   = 5 * 1024 * 1024;
 
     const fileInput   = document.getElementById('sampleFile');
     const uploadBox   = document.getElementById('uploadBox');
     const uploadError = document.getElementById('uploadError');
-
-    // Visitor-facing
     const visitorCases = document.getElementById('visitorCases');
     const sampleMock   = document.getElementById('sampleMock');
-
-    // Admin-facing
     const caseList    = document.getElementById('caseList');
     const caseEmpty   = document.getElementById('caseEmpty');
     const caseCount   = document.getElementById('caseCount');
     const deleteAllBtn= document.getElementById('deleteAllBtn');
 
-    /* ----- Storage helpers (array of records) ----- */
     function readAll() {
       try {
         const raw = localStorage.getItem(STORAGE_KEY);
@@ -2363,7 +2240,6 @@ if (productTierInput) {
           const parsed = JSON.parse(raw);
           return Array.isArray(parsed) ? parsed : [];
         }
-        // Migration: if old single-record format exists, convert to array.
         const legacyRaw = localStorage.getItem(LEGACY_KEY);
         if (legacyRaw) {
           const legacy = JSON.parse(legacyRaw);
@@ -2405,7 +2281,6 @@ if (productTierInput) {
       return readAll().find(r => r.id === id) || null;
     }
 
-    /* ----- Formatting helpers ----- */
     function formatSize(bytes) {
       if (bytes < 1024) return bytes + ' B';
       if (bytes < 1024 * 1024) return (bytes / 1024).toFixed(1) + ' KB';
@@ -2427,7 +2302,6 @@ if (productTierInput) {
       uploadError.classList.remove('show');
     }
 
-    /* ----- Open a stored PDF in a new tab (or fall back to download) ----- */
     function openPdf(record) {
       if (!record || !record.dataUrl) return;
       try {
@@ -2438,7 +2312,7 @@ if (productTierInput) {
         const blob = new Blob([ab], { type: 'application/pdf' });
         const url = URL.createObjectURL(blob);
         window.open(url, '_blank', 'noopener');
-        setTimeout(() => URL.revokeObjectURL(url), 60_000);
+        setTimeout(() => URL.revokeObjectURL(url), 60000);
       } catch (e) {
         const a = document.createElement('a');
         a.href = record.dataUrl;
@@ -2447,21 +2321,16 @@ if (productTierInput) {
       }
     }
 
-    /* ----- Render the visitor-facing public cases grid ----- */
     function renderVisitor(list) {
       const publicOnes = list.filter(r => r.isPublic);
       visitorCases.innerHTML = '';
-
       if (publicOnes.length === 0) {
         visitorCases.classList.remove('show');
-        // Show the default mock placeholder (CSS default = flex)
         sampleMock.style.display = '';
         return;
       }
-
       visitorCases.classList.add('show');
       sampleMock.style.display = 'none';
-
       publicOnes.forEach(rec => {
         const card = document.createElement('div');
         card.className = 'visitor-case';
@@ -2481,19 +2350,15 @@ if (productTierInput) {
       });
     }
 
-    /* ----- Render the admin case list (all cases, public and private) ----- */
     function renderAdmin(list) {
       caseList.innerHTML = '';
       caseCount.textContent = list.length;
       deleteAllBtn.disabled = list.length === 0;
-
       if (list.length === 0) {
         caseEmpty.style.display = 'block';
         return;
       }
       caseEmpty.style.display = 'none';
-
-      // Newest first
       const sorted = [...list].sort((a, b) => (b.savedAt || 0) - (a.savedAt || 0));
       sorted.forEach(rec => {
         const li = document.createElement('li');
@@ -2510,19 +2375,14 @@ if (productTierInput) {
             </span>
           </div>
           <div class="case-actions">
-            <button type="button" data-act="view">
-              <i class="fa-solid fa-eye"></i> View
-            </button>
+            <button type="button" data-act="view"><i class="fa-solid fa-eye"></i> View</button>
             <button type="button" data-act="toggle" class="${rec.isPublic ? '' : 'primary'}">
               <i class="fa-solid ${rec.isPublic ? 'fa-eye-slash' : 'fa-globe'}"></i>
               ${rec.isPublic ? 'Make private' : 'Publish'}
             </button>
-            <button type="button" data-act="delete" class="danger">
-              <i class="fa-solid fa-trash-can"></i> Delete
-            </button>
+            <button type="button" data-act="delete" class="danger"><i class="fa-solid fa-trash-can"></i> Delete</button>
           </div>
         `;
-
         li.querySelector('[data-act="view"]').addEventListener('click', () => {
           const r = findById(rec.id);
           if (r) openPdf(r);
@@ -2539,12 +2399,10 @@ if (productTierInput) {
           const all = readAll().filter(r => r.id !== rec.id);
           if (writeAll(all)) render();
         });
-
         caseList.appendChild(li);
       });
     }
 
-    /* ----- Top-level render ----- */
     function render() {
       const list = readAll();
       renderVisitor(list);
@@ -2552,15 +2410,9 @@ if (productTierInput) {
     }
 
     function escapeHtml(str) {
-      return String(str)
-        .replace(/&/g, '&amp;')
-        .replace(/</g, '&lt;')
-        .replace(/>/g, '&gt;')
-        .replace(/"/g, '&quot;')
-        .replace(/'/g, '&#39;');
+      return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;');
     }
 
-    /* ----- Upload handling ----- */
     function handleFile(file) {
       clearError();
       if (!file) return;
@@ -2572,7 +2424,6 @@ if (productTierInput) {
         showError('File is too large. Maximum size is 5 MB.');
         return;
       }
-
       const reader = new FileReader();
       reader.onload = () => {
         const record = {
@@ -2597,7 +2448,6 @@ if (productTierInput) {
       fileInput.value = '';
     });
 
-    // Drag & drop support
     ['dragenter', 'dragover'].forEach(ev => {
       uploadBox.addEventListener(ev, (e) => {
         e.preventDefault();
@@ -2615,7 +2465,6 @@ if (productTierInput) {
       handleFile(file);
     });
 
-    // Bulk delete
     deleteAllBtn.addEventListener('click', () => {
       const list = readAll();
       if (list.length === 0) return;
@@ -2624,13 +2473,9 @@ if (productTierInput) {
       render();
     });
 
-    // Expose render so the admin-login flow can refresh after login.
     window.__renderSampleAdmin = render;
-
-    // Initial render — also handles auto-migration from the legacy single-record key.
     render();
   })();
 </script>
-
 </body>
 </html>

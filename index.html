@@ -1929,7 +1929,7 @@
 
         <div class="field" data-required data-email>
           <label for="email">Email <span class="req">*</span></label>
-          <input type="email" id="email" name="_replyto" placeholder="you@company.com" />
+          <input type="email" id="email" name="email" placeholder="you@company.com" />
           <span class="err">Please enter a valid email address.</span>
         </div>
 
@@ -2074,28 +2074,35 @@
   });
 
   // ========== 记录用户选择的产品档次 ==========
-  const productTierInput = document.getElementById('productTier');
+const productTierInput = document.getElementById('productTier');
 
-  document.querySelectorAll('.price .btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const priceCard = btn.closest('.price');
-      if (priceCard) {
-        const tier = priceCard.getAttribute('data-tier');
-        if (tier) {
-          sessionStorage.setItem('selectedTier', tier);
-          console.log('已保存套餐:', tier);
+// 为所有定价卡片的按钮添加点击事件
+document.querySelectorAll('.price .btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+        const priceCard = e.target.closest('.price');
+        if (priceCard) {
+            const tier = priceCard.getAttribute('data-tier');
+            if (tier) {
+                sessionStorage.setItem('selectedTier', tier);
+                console.log('已保存套餐:', tier);
+                // 如果当前已经在联系表单页面，立即更新隐藏字段
+                if (productTierInput) {
+                    productTierInput.value = tier;
+                }
+            }
         }
-      }
     });
-  });
+});
 
-  if (productTierInput) {
+// 页面加载时，如果有存储的档次，写入隐藏字段
+if (productTierInput) {
     const savedTier = sessionStorage.getItem('selectedTier');
     if (savedTier) {
-      productTierInput.value = savedTier;
-      console.log('页面加载，已恢复套餐:', savedTier);
+        productTierInput.value = savedTier;
+        console.log('页面加载，已恢复套餐:', savedTier);
     }
-  }
+}
+// ========== 记录产品档次结束 ==========
 
   const form = document.getElementById('contactForm');
   const success = document.getElementById('formSuccess');
@@ -2142,10 +2149,15 @@
       return;
     }
 
+    // 确保套餐信息被包含
     const savedTier = sessionStorage.getItem('selectedTier');
     if (savedTier && productTierInput) {
-      productTierInput.value = savedTier;
-      console.log('提交时设置套餐:', savedTier);
+        productTierInput.value = savedTier;
+        console.log('提交时设置套餐:', savedTier);
+    } else if (productTierInput && productTierInput.value) {
+        console.log('提交时已有套餐值:', productTierInput.value);
+    } else {
+        console.log('警告：未找到套餐信息');
     }
 
     const iframe = document.createElement('iframe');

@@ -2133,11 +2133,12 @@
   const nameInput = document.getElementById('name');
   const companyInput = document.getElementById('company');
 
-  /* form.addEventListener('submit', async (e) => {
+  form.addEventListener('submit', (e) => {
     e.preventDefault();
+
+    // 复用你已有的 either/or 以及必填项校验（保持原逻辑）
     let valid = true;
 
-    // Either-or validation: at least one of name / company must be filled
     eitherGroup.classList.remove('invalid');
     eitherHint.classList.remove('invalid');
     const nameFilled = nameInput.value.trim().length > 0;
@@ -2151,7 +2152,6 @@
         eitherHint.querySelector('i').className = 'fa-regular fa-circle-info';
     }
 
-    // Standard required + email validation for the rest
     form.querySelectorAll('.field').forEach(field => {
         const input = field.querySelector('input, textarea');
         if (!input) return;
@@ -2172,37 +2172,27 @@
         return;
     }
 
-    // ========== 新增：提交到 Formspree ==========
-    try {
-        // 收集表单数据
-        const formData = new FormData(form);
-        
-        // 提交到 Formspree
-        const response = await fetch(form.action, {
-            method: 'POST',
-            body: formData,
-            headers: {
-                'Accept': 'application/json'
-            }
-        });
-        
-        if (response.ok) {
-            // 提交成功
-            success.classList.add('show');
-            form.reset();
-            success.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            setTimeout(() => success.classList.remove('show'), 6000);
-        } else {
-            // 提交失败
-            const errorData = await response.json();
-            alert('提交失败: ' + (errorData.error || '请稍后重试'));
-        }
-    } catch (error) {
-        console.error('提交错误:', error);
-        alert('网络错误，请检查网络连接后重试');
-    }
-    // ========== 新增结束 ==========
-}); */
+    // ✅ 提交至 Formspree（iframe 方式：无跳转，用户无感）
+    const iframe = document.createElement('iframe');
+    iframe.name = 'hidden-form-submit';
+    iframe.style.display = 'none';
+    form.target = iframe.name;
+    document.body.appendChild(iframe);
+
+    // 提交成功后清理 iframe，显示成功提示
+    iframe.onload = () => {
+        setTimeout(() => {
+            document.body.removeChild(iframe);
+        }, 1000);
+        success.classList.add('show');
+        form.reset();
+        success.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        setTimeout(() => success.classList.remove('show'), 5000);
+        form.target = '';
+    };
+
+    form.submit();
+});
 
   /* ============================================================
      Sample report upload + demo "admin" panel
